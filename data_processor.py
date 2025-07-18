@@ -75,7 +75,7 @@ def classify_moisture(moisture):
 
 def log_status(avg_temp, avg_light, avg_moisture, status_temp, status_light, status_moisture):
     now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    with open("sensor_log.txt", "a") as f:
+    with open("./sensor_log.txt", "a") as f:
         f.write(
             f"{now} - Avg Temp: {avg_temp:.2f}C ({status_temp}) | "
             f"Avg Light: {avg_light} ({status_light}) | "
