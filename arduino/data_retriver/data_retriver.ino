@@ -2,8 +2,8 @@
 // Light sensor: A1
 // Capacitive Soil Moisture Sensor v1.2: A2
 
-const int tempPin = A0;
-const int lightPin = A1;
+const int tempPin = A1;
+const int lightPin = A0;
 const int moisturePin = A2;
 
 void setup() {
@@ -13,8 +13,8 @@ void setup() {
 void loop() {
   // === Temperature ===
   int tempReading = analogRead(tempPin);
-  float voltage = tempReading * (5.0 / 1023.0);
-  float temperatureC = (voltage - 0.5) * 100.0;
+  float voltage = tempReading * (5.0 / 4095.0); //1023.0 for arduino uno
+  float temperatureC = ((voltage - 0.5) * 100.0)/2;
 
   // === Light Level ===
   int lightLevel = analogRead(lightPin);  // 0–1023 (higher = more light)

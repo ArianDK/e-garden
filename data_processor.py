@@ -18,7 +18,7 @@ MOISTURE_WET = 400
 MOISTURE_DRY = 700
 
 # === Serial setup ===
-arduino = serial.Serial('COM3', 9600)  # Replace with your correct COM port
+arduino = serial.Serial('COM10', 9600)  # Replace with your correct COM port
 time.sleep(2)  # Allow Arduino to reset
 
 def read_sensor_data(sample_count=10):
