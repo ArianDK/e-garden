@@ -77,9 +77,10 @@ def log_status(avg_temp, avg_light, avg_moisture, status_temp, status_light, sta
     now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     with open("./sensor_log.txt", "a") as f:
         f.write(
-            f"{now} - Avg Temp: {avg_temp:.2f}C ({status_temp}) | "
-            f"Avg Light: {avg_light} ({status_light}) | "
-            f"Avg Moisture: {avg_moisture} ({status_moisture})\n"
+            f"{now} | "
+            f"Avg Temp: {avg_temp:.2f}C | {status_temp} | "
+            f"Avg Light: {avg_light:.1f} | {status_light} | "
+            f"Avg Moisture: {avg_moisture:.1f} | {status_moisture}\n"
         )
     print("Logged to file.")
 
