@@ -1,69 +1,115 @@
-# E-Garden  
+# Encouraging Gardening and Healthy Eating with E-Garden
+
+
+
 **A Smart Gardening Assistant to Reduce Food Insecurity**
+E-Garden is a smart gardening solution designed to empower individuals and communities with limited access to fresh produce. By combining real-time environmental sensing, intuitive feedback, and accessible technology, E-Garden simplifies plant care and promotes healthier eating through DIY gardening.
 
-E-Garden is a smart gardening solution designed to empower individuals and communities with limited access to fresh produce. By combining real-time environmental sensing, intuitive feedback, and accessible technology, E-Garden simplifies plant care and promotes healthier eating through gardening.
-
----
 
 ## Table of Contents
-- [Background](#background)
-- [Goals](#goals)
-- [How It Works](#how-it-works)
-- [Features](#features)
-- [Hardware Setup](#hardware-setup)
+### The story of E-Garden
+<img src=".\img\rice.png" alt="rice" width="200" align="right"/>
+
+- [The Food Access Gap](#The-Food-Access-Gap)
+- [The Goals of E-Garden](#The-Goals-of-E-Garden)
+- [Prototype](#Prototype)
+- [Conclusion](#Conclusion)
+- [Acknowledgements/References](#Acknowledgements/References)
+### Product setup
+<img src=".\img\paths-up.png" alt="paths-up" width="200" align="right"/>
+
+- [Hardware Installation](#hardware-installation)
 - [Software Installation](#software-installation)
 - [Data Flow](#data-flow)
 - [Getting Started](#getting-started)
 - [Support](#support)
 - [License](#license)
 
----
+## The Food Access Gap
 
-## Background
+An estimated **53.6 million** people in the U.S. reside in low-income areas that are more than 0.5 miles in urban areas and 10 miles in rural areas from the nearest supermarket (USDA).
 
-Over **53.6 million** people in the U.S. live in low-income areas with limited access to fresh produce—defined as more than 0.5 miles (urban) or 10 miles (rural) from the nearest supermarket (USDA).
+### Food insecurity
+- Food Insecurity is defined as lacking the resources or ability to buy healthy nutritious food.
+- Low income is directly correlated with a decrease in vegetable consumption.
 
-Food insecurity, the lack of reliable access to nutritious food, is often exacerbated by:
-- Low income and busy lifestyles
-- High cost or poor availability of fruits and vegetables
-- A lack of familiarity or confidence in preparing healthy meals (CDC)
+A higher percentage of food-insecure respondents reported being too busy, finding fruits and vegetables too expensive, or disliking the taste of healthy food (CDC).
 
----
+## The Goals of E-Garden
 
-## Goals
+In order to reduce food insecurity, we studied how to encourage gardening, and propose healthier eating through our prototype - The E-Garden. 
 
-E-Garden aims to:
-- Encourage gardening as a way to improve food access
-- Empower users with minimal gardening experience
-- Promote sustainability and healthy eating
-- Provide a simple, scalable system for monitoring plant health
+### Reducing Barriers to Fresh Food
+- Encourages Consumption of Vegetables: Allows for users to be more familiar and invested in the growth and consumption of vegetables.
+- Sustainable & Saves Time: Promotes sustainable eating. Quick tips make plant care easy, even for busy users.
+- Simplifies Care: Sensors show exactly what the plants need, without the user having to check manually.
+- Builds Confidence: Empowers first time growers with simple, clear guidance on how to take care of their plants.
 
----
-
-## How It Works
+## Prototype
 
 E-Garden uses a set of sensors connected to an Arduino that continuously monitor plant health and send status updates to a lightweight wearable display, the **TinyWatch**.
 
-### Prototype Components:
-- **Moisture Sensor** – detects soil dryness  
-- **Light Sensor** – measures sunlight exposure  
-- **Temperature Sensor** – tracks ambient air temperature  
-- **Arduino Nano ESP32** – collects sensor data and sends it to a computer  
-- **TinyWatch** – displays care messages in real time via Bluetooth or Wi-Fi  
+### Components:
+<div align="center">
+    <img src="./img/temprature-sensor.png" alt="temprature-sensor" style="height: 150px;">
+    <img src="./img/soil-moisture-sensor.png" alt="soil-moisture-sensor" style="height: 150px;">
+    <img src="./img/light-sensor.png" alt="light-sensor" style="height: 150px;">
+    <img src="./img/arduino-nano-esp32.png" alt="arduino-nano-esp32" style="height: 150px;">
+   <img src="./img/tinyScreen-smartwatch.png" alt="tinyScreen-smartwatch" style="height: 150px;">
+    
+</div>
 
----
+- **Temperature Sensor** – tracks air temperature.
+- **Moisture Sensor** – detects soil dryness.
+- **Light Sensor** – measures sunlight exposure.
+- **Arduino Nano ESP32** – collects sensor data and sends it to a computer.
+- **TinyScreen Smart Watch Kit** – displays care messages in real time via Bluetooth or Wi-Fi.
 
-## Features
+### Total Cost: ~$50
 
-- **Real-Time Monitoring**: Sensor data is updated every 10 minutes
-- **Clear Plant Status**: Simple care suggestions displayed on TinyWatch
-- **User-Friendly**: Quick tips make plant care easy for beginners
-- **Sustainable**: Encourages self-grown produce with minimal maintenance
-- **Scalable**: Monitor a single plant or expand to multiple garden beds
-- **No Batteries Required**: Fully powered through USB
+## Prototype Functionality
+- Garden sensors (moisture, light, and temperature) are placed near the plants.
+- Each sensor collects real-time data about the local growing environment (repeats every 10 minutes).
+- Sensor data is sent from the Arduino to the computer and logged to a text file.
+- The latest data is sent from the computer’s text file via Bluetooth to the TinyScreen.
+- TinyScreen displays simple plant status messages and care suggestions.
 
----
+## Fully Integrated System & Prototype
+<div align="left">
+    <img src="./img/fully-integrated-system.png" alt="fully-integrated-system" style="height: 300px;">
+    <img src="./img/prototype.png" alt="fully-integrated-system" style="height: 300px;">
+</div>
 
+
+
+## Technical Features
+- **Python & Arduino-Based**: Core functions are programmed using both Python and the Arduino language.
+- **Scalable**: Can monitor one plant or multiple simultaneously.
+- **Easy Setup**: Simple step-by-step instructions available on GitHub.
+- **Plug-and-Play**: No batteries required, just connect and grow.
+
+## Watch Interface
+<div align="left">
+    <img src="./img/watch.png" alt="watch" style="height: 200px;">
+</div>
+
+## Conclusion
+- **Addresses Food Deserts**: Helps individuals in underserved areas grow fresh food at home.
+- **Promotes Healthy Habits**: Encourages vegetable consumption through hands-on involvement.
+- **Reduces Common Barriers**: Tackles time, cost, and knowledge gaps with simple tech.
+- **Empowers First-Time Growers**: Builds confidence and skills in sustainable gardening.
+- **Low-Cost, Scalable Solution**: Accessible design that works for any small growing space.
+
+## Looking forward
+- **Community Integration**: May incorporate shared data hubs to support neighborhood or school-based community gardens.
+- **Interchangeable System**: Could incorporate information specific to different types of plants and growing conditions.
+
+## Acknowledgements / References
+- https://www.cdc.gov/pcd/issues/2016/15_0402.htm (2016, CDC).
+- https://www.ers.usda.gov/data-products/food-access-research-atlas/documentation (2025, USDA).
+- Dr. Young and Mr. Franklin for their help and guidance.
+
+# Setup Tutorial
 ## Hardware Setup
 
 **Required Components:**
@@ -76,11 +122,9 @@ E-Garden uses a set of sensors connected to an Arduino that continuously monitor
 - TinyWatch or compatible Bluetooth/Wi-Fi display
 
 **Sensor Pin Mapping:**
-- Temperature Sensor → `A0`  
-- Light Sensor → `A1`  
-- Moisture Sensor → `A2`  
-
----
+- Temperature Sensor → `A0`
+- Light Sensor → `A1`
+- Moisture Sensor → `A2`
 
 ## Software Installation
 
@@ -109,16 +153,14 @@ Upload the Arduino sketch located in `/arduino/e_garden_sensor_reader.ino` to yo
 ```plaintext
 [ Sensors ]
    ↓
-[ Arduino Nano ESP32 ]
-   ↓ (Serial every 10 min)
-[ Computer (Python Script) ]
-   ↓ (Writes to text file)
-[ Text file ]
-   ↓ (Bluetooth/Wi-Fi)
-[ TinyWatch ]
+[ Arduino Nano ESP32 ] (Serial every 10 min)
+   ↓
+[ Computer (Python Script) ] (Writes to text file)
+   ↓
+[ Text file ] (Bluetooth/Wi-Fi)
+   ↓
+[ TinyScreen ]
 ```
-
----
 
 ## Getting Started
 
@@ -128,13 +170,9 @@ Upload the Arduino sketch located in `/arduino/e_garden_sensor_reader.ino` to yo
 4. **Pair TinyWatch** via Bluetooth or Wi-Fi to begin receiving updates.
 5. Watch your plants thrive with data-driven guidance.
 
----
-
 ## Support
 
 If you encounter issues or have suggestions, please [open an issue](https://github.com/Arian-DK/e-garden/issues) or email the team.
-
----
 
 ## License
 
