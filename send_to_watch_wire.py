@@ -9,10 +9,34 @@ with open(LOG_FILE, "r") as file:
     latest_data = lines[-1].strip() if lines else None
 
 WATCH_PORT = "COM14"  # TinyScreen+ port
+
+def format_for_watch(data_line):
+    # Example format:
+    # 2025-07-23 | 09:34:31 | Temp: 23.20C | Optimal temperature | Light: 521.7 | Plant is chilling | Moisture: 3542.5 | Needs water
+    if not data_line:
+        return ""
+
+    parts = data_line.split(" | ")
+
+    try:
+        date = parts[0]
+        time_ = parts[1]
+        temp = parts[2].split(":")[1].strip()
+        light = parts[4].split(":")[1].strip()
+        moisture = parts[6].split(":")[1].strip()
+
+        return f"{date} | {time_} | Temperature: {temp} | Light: {light} | Moisture: {moisture}"
+    except Exception as e:
+        print("Error formatting data:", e)
+        return ""
+
+# Format data for display
+formatted_data = format_for_watch(latest_data)
+
+# Send to watch
 try:
     with serial.Serial(WATCH_PORT, 9600, timeout=2) as watch:
-        watch.write(latest_data.encode())
-        print("Message sent")
+        watch.write((formatted_data + "\n").encode())
+        print("Message sent:", formatted_data)
 except Exception as e:
     print("Error communicating with TinyWatch+:", e)
-

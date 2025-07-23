@@ -51,19 +51,19 @@ def read_sensor_data(sample_count=10):
 
 def classify_temperature(temp):
     if temp < TEMP_TOO_COLD:
-        return "Plant is too cold"
+        return "Too cold"
     elif temp > TEMP_TOO_HOT:
-        return "Plant is too hot"
+        return "Too hot"
     else:
-        return "Plant is in optimal temperature"
+        return "Optimal temperature"
 
 def classify_light(light):
     if light < LIGHT_LOW:
-        return "No they are not (too dark)"
+        return "Too dark"
     elif light > LIGHT_HIGH:
-        return "Been in the sun for too long"
+        return "Too much light"
     else:
-        return "They are chilling"
+        return "Plant is chilling"
 
 def classify_moisture(moisture):
     if moisture < MOISTURE_WET:
@@ -74,13 +74,14 @@ def classify_moisture(moisture):
         return "Does not water"
 
 def log_status(avg_temp, avg_light, avg_moisture, status_temp, status_light, status_moisture):
-    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    date = datetime.now().strftime("%Y-%m-%d")
+    time = datetime.now().strftime("%H:%M:%S")
     with open("./sensor_log.txt", "a") as f:
         f.write(
-            f"{now} | "
-            f"Avg Temp: {avg_temp:.2f}C | {status_temp} | "
-            f"Avg Light: {avg_light:.1f} | {status_light} | "
-            f"Avg Moisture: {avg_moisture:.1f} | {status_moisture}\n"
+            f"{date} | {time} | "
+            f"Temp: {avg_temp:.2f}C | {status_temp} | "
+            f"Light: {avg_light:.1f} | {status_light} | "
+            f"Moisture: {avg_moisture:.1f} | {status_moisture}\n"
         )
     print("Logged to file.")
 

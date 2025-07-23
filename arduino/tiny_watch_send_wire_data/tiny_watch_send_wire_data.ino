@@ -18,28 +18,30 @@ void setup() {
 
   display.begin();
   display.setBrightness(10);
-  display.setFlip(false);
+  display.setFlip(true);  // Flip the screen 180 degrees
   display.setFont(thinPixel7_10ptFontInfo);
   display.fontColor(TS_8b_White, TS_8b_Black);
   display.clearScreen();
 
   display.setCursor(0, 10);
   display.print("Waiting for data...");
+
+  if (!hasReceived && SerialMonitorInterface.available() > 0) {
+    // Read the Full Line of Data
+    String line = SerialMonitorInterface.readStringUntil('\n');
+
+    // Clears the TinyScreen+ display before showing new content
+    display.clearScreen();
+  }
 }
 
 void loop() {
-  if (!hasReceived && SerialMonitorInterface.available() > 0) {
+  //TSButtonLowerLeft is for lower left button
     String line = SerialMonitorInterface.readStringUntil('\n');
-
-    SerialMonitorInterface.print("I received: ");
-    SerialMonitorInterface.println(line);
-
-    display.clearScreen();
-
     int y = 0;
     int startIndex = 0;
 
-    while (true) {
+    while(true) {
       int sepIndex = line.indexOf(" | ", startIndex);
 
       String part;
@@ -54,9 +56,17 @@ void loop() {
       display.print(part);
       y += 10;
 
-      if (sepIndex == -1 || y > 50) break;  // stop after last or if out of space
+      if (sepIndex == -1) break;  // stop after last or if out of space
     }
 
-    hasReceived = true;
+  bool button_UL = display.getButtons (TSButtonUpperLeft); //get button status
+  int buttonReleased = 1; //flag
+
+  if (buttonReleased && button_UL) { //wait for button press buttonReleased = 0; //toggle flag so this if statement is not true anymore
+      display.clearScreen();
+      display.setCursor(0, 10);
+      display.print("It's Working");
   }
+
+  //if (!buttonReleased && !button_UL) { buttonReleased = 1;} //toggle flag (dont need right now)
 }

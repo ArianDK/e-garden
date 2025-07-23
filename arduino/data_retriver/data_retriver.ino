@@ -2,8 +2,8 @@
 // Light sensor: A1
 // Capacitive Soil Moisture Sensor v1.2: A2
 
+const int lightPin = A0; // Requires pin 0
 const int tempPin = A1;
-const int lightPin = A0;
 const int moisturePin = A2;
 
 void setup() {
