@@ -20,12 +20,16 @@ def format_for_watch(data_line):
 
     try:
         date = parts[0]
-        time_ = parts[1]
+        time = parts[1]
         temp = parts[2].split(":")[1].strip()
+        tempStatus = parts[3].strip()
         light = parts[4].split(":")[1].strip()
+        lightStatus = parts[5].strip()
         moisture = parts[6].split(":")[1].strip()
+        moistureStatus = parts[7].strip()
 
-        return f"{date} | {time_} | Temperature: {temp} | Light: {light} | Moisture: {moisture}"
+        return f"{date} | {time} | {temp} | {tempStatus} | {light} | {lightStatus} | {moisture} | {moistureStatus}"
+
     except Exception as e:
         print("Error formatting data:", e)
         return ""
