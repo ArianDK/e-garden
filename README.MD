@@ -14,7 +14,7 @@ E-Garden is a smart gardening solution designed to empower individuals and commu
 - [The Goals of E-Garden](#The-Goals-of-E-Garden)
 - [Prototype](#Prototype)
 - [Conclusion](#Conclusion)
-- [Acknowledgements/References](#Acknowledgements/References)
+
 ### Product setup
 <img src=".\img\paths-up.png" alt="paths-up" width="200" align="right"/>
 
@@ -23,6 +23,7 @@ E-Garden is a smart gardening solution designed to empower individuals and commu
 - [Data Flow](#data-flow)
 - [Getting Started](#getting-started)
 - [Support](#support)
+- [Acknowledgements/References](#Acknowledgements/References)
 - [License](#license)
 
 ## The Food Access Gap
@@ -104,22 +105,17 @@ E-Garden uses a set of sensors connected to an Arduino that continuously monitor
 - **Community Integration**: May incorporate shared data hubs to support neighborhood or school-based community gardens.
 - **Interchangeable System**: Could incorporate information specific to different types of plants and growing conditions.
 
-## Acknowledgements / References
-- https://www.cdc.gov/pcd/issues/2016/15_0402.htm (2016, CDC).
-- https://www.ers.usda.gov/data-products/food-access-research-atlas/documentation (2025, USDA).
-- Dr. Young and Mr. Franklin for their help and guidance.
-
 # Setup Tutorial
-## Hardware Setup
 
+## Hardware Setup
 **Required Components:**
-- Arduino Nano ESP32
-- TMP36 Analog Temperature Sensor
-- Photoresistor (light sensor)
-- Capacitive Soil Moisture Sensor v1.2
-- Resistors and jumper wires
-- Breadboard
-- TinyWatch or compatible Bluetooth/Wi-Fi display
+- [Arduino Nano ESP32](https://www.amazon.com/Arduino-ABX00083-Bluetooth-MicroPython-Compatible/dp/B0C947BHK5)
+- [TMP36 Analog Temperature Sensor](https://www.amazon.com/Analog-Devices-TMP36-Temperature-Sensor/dp/B00JYQAIBM)
+- [Photoresistor (light sensor)](https://www.amazon.com/AllGIFT-Photosensitive-Dependent-Resistor-Durable/dp/B0CQ2C2Z7Q?gQT=1)
+- [Capacitive Soil Moisture Sensor v1.2](https://www.amazon.com/Stemedu-Capacitive-Corrosion-Resistant-Electronic/dp/B0BTHL6M19)
+- [Jumper wires](https://www.amazon.com/EDGELEC-Breadboard-Optional-Assorted-Multicolored/dp/B07GD1ZCHQ?gQT=1&th=1)
+- [Breadboard](https://www.amazon.com/Breadboard-Solderless-Prototype-Distribution-Connecting/dp/B0D9LCDHF8)
+- [TinyWatch](https://tinycircuits.com/products/tinyscreen-smart-watch-kit?srsltid=AfmBOopw1I692sRvHJSwYgLGjQ8IO8G3jSGKmU5bt_cmC8oi4IxcXQKg)
 
 **Sensor Pin Mapping:**
 - Temperature Sensor → `A0`
@@ -129,9 +125,9 @@ E-Garden uses a set of sensors connected to an Arduino that continuously monitor
 ## Software Installation
 
 ### Prerequisites:
-- [Python 3.x](https://www.python.org/downloads/)
+- [Python 3](https://www.python.org/downloads/)
 - [Arduino IDE](https://www.arduino.cc/en/software)
-- Bluetooth or Wi-Fi enabled TinyWatch device
+- Bluetooth enabled TinyScreen Smart Watch Kit
 
 ### Python Libraries:
 ```bash
@@ -146,8 +142,6 @@ cd e-garden
 
 Upload the Arduino sketch located in `/arduino/e_garden_sensor_reader.ino` to your Nano ESP32.
 
----
-
 ## Data Flow
 
 ```plaintext
@@ -159,7 +153,7 @@ Upload the Arduino sketch located in `/arduino/e_garden_sensor_reader.ino` to yo
    ↓
 [ Text file ] (Bluetooth/Wi-Fi)
    ↓
-[ TinyScreen ]
+[ TinyScreen ] (Display status)
 ```
 
 ## Getting Started
@@ -173,6 +167,11 @@ Upload the Arduino sketch located in `/arduino/e_garden_sensor_reader.ino` to yo
 ## Support
 
 If you encounter issues or have suggestions, please [open an issue](https://github.com/Arian-DK/e-garden/issues) or email the team.
+
+## Acknowledgements / References
+- https://www.cdc.gov/pcd/issues/2016/15_0402.htm (2016, CDC).
+- https://www.ers.usda.gov/data-products/food-access-research-atlas/documentation (2025, USDA).
+- Dr. Young and Mr. Franklin for their help and guidance.
 
 ## License
 
