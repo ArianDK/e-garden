@@ -13,7 +13,7 @@ LIGHT_HIGH = 50 # Too much sunlight
 
 # Moisture thresholds (0–1023, lower = wetter)
 MOISTURE_WET = 1600 # Too wet
-MOISTURE_DRY = 2500 # Too dry
+MOISTURE_DRY = 3200 # Too dry
 
 # === Serial setup ===
 arduino = serial.Serial('COM10', 9600)  # Replace with your correct COM port

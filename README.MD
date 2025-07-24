@@ -125,9 +125,11 @@ This section covers how to build and use the product yourself.
 - [TinyWatch](https://tinycircuits.com/products/tinyscreen-smart-watch-kit?srsltid=AfmBOopw1I692sRvHJSwYgLGjQ8IO8G3jSGKmU5bt_cmC8oi4IxcXQKg)
 
 ### Sensor Pin Mapping:
+- Power (5V) → `VBUS`
 - Light Sensor → `A0`
 - Temperature Sensor → `A1`
 - Moisture Sensor → `A2`
+- Moisture Sensor → `D4`
 
 ## Software Installation
 
