@@ -154,13 +154,16 @@ cd e-garden
 ```plaintext
 [ Sensors ] → prepares sensors | data_retriver.ino
    ↓
-[ Computer ] → writes sensor data to text file | data_processor.py
+[ Computer ] → writes sensor data to text file | data_logger.py
    ↓
 [ TinyScreen Interface ] → send interface to TinyScreen | tiny_watch_send_wire_data.ino
    ↓
 [ TinyScreen Display ] → send data to TinyScreen | send_to_watch_wire.py
 ```
-
+### Sensor Data Example (sensor_log.txt)
+ ```plaintext
+ 2025-07-24 | 09:41:55 | Temp: 23.50C | Optimal temperature | Light: 596.2 | Optimal sunlight | Moisture: 1789.6 | Too wet
+ ```
 ## Getting Started
 
 1. **Connect Sensors** to the Arduino according to the wiring diagram.
