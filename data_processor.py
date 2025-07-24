@@ -5,17 +5,15 @@ from datetime import datetime
 # === Constants ===
 # Temperature thresholds (°C)
 TEMP_TOO_COLD = 15.0
-TEMP_OPTIMAL_LOW = 15.0
-TEMP_OPTIMAL_HIGH = 27.0
-TEMP_TOO_HOT = 27.0
+TEMP_TOO_HOT = 35.0
 
-# Light thresholds (0–1023)
-LIGHT_LOW = 300
-LIGHT_HIGH = 800
+# Light thresholds (0–1600)
+LIGHT_LOW = 1200 # Too little sunlight
+LIGHT_HIGH = 50 # Too much sunlight
 
 # Moisture thresholds (0–1023, lower = wetter)
-MOISTURE_WET = 400
-MOISTURE_DRY = 700
+MOISTURE_WET = 1600 # Too wet
+MOISTURE_DRY = 2500 # Too dry
 
 # === Serial setup ===
 arduino = serial.Serial('COM10', 9600)  # Replace with your correct COM port
@@ -58,20 +56,20 @@ def classify_temperature(temp):
         return "Optimal temperature"
 
 def classify_light(light):
-    if light < LIGHT_LOW:
+    if light > LIGHT_LOW:
         return "Too dark"
-    elif light > LIGHT_HIGH:
+    elif light < LIGHT_HIGH:
         return "Too much light"
     else:
-        return "Plant is chilling"
+        return "Optimal sunlight"
 
 def classify_moisture(moisture):
     if moisture < MOISTURE_WET:
-        return "All good (wet)"
+        return "Too wet"
     elif moisture > MOISTURE_DRY:
-        return "Needs water"
+        return "Too dry"
     else:
-        return "Does not water"
+        return "Enough water"
 
 def log_status(avg_temp, avg_light, avg_moisture, status_temp, status_light, status_moisture):
     date = datetime.now().strftime("%Y-%m-%d")
