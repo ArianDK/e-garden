@@ -105,10 +105,18 @@ E-Garden uses a set of sensors connected to an Arduino that continuously monitor
 - **Community Integration**: May incorporate shared data hubs to support neighborhood or school-based community gardens.
 - **Interchangeable System**: Could incorporate information specific to different types of plants and growing conditions.
 
-# Setup Tutorial
 
+## Poster
+<div align="center">
+    <img src="./img/2025_take_fight_poster.png" alt="watch" style="height: 400px;">
+</div>
+
+
+# Setup Tutorial
+This section covers how to build and use the product yourself.
 ## Hardware Setup
-**Required Components:**
+
+### Required Components:
 - [Arduino Nano ESP32](https://www.amazon.com/Arduino-ABX00083-Bluetooth-MicroPython-Compatible/dp/B0C947BHK5)
 - [TMP36 Analog Temperature Sensor](https://www.amazon.com/Analog-Devices-TMP36-Temperature-Sensor/dp/B00JYQAIBM)
 - [Photoresistor (light sensor)](https://www.amazon.com/AllGIFT-Photosensitive-Dependent-Resistor-Durable/dp/B0CQ2C2Z7Q?gQT=1)
@@ -117,9 +125,9 @@ E-Garden uses a set of sensors connected to an Arduino that continuously monitor
 - [Breadboard](https://www.amazon.com/Breadboard-Solderless-Prototype-Distribution-Connecting/dp/B0D9LCDHF8)
 - [TinyWatch](https://tinycircuits.com/products/tinyscreen-smart-watch-kit?srsltid=AfmBOopw1I692sRvHJSwYgLGjQ8IO8G3jSGKmU5bt_cmC8oi4IxcXQKg)
 
-**Sensor Pin Mapping:**
-- Temperature Sensor → `A0`
-- Light Sensor → `A1`
+### Sensor Pin Mapping:
+- Light Sensor → `A0`
+- Temperature Sensor → `A1`
 - Moisture Sensor → `A2`
 
 ## Software Installation
@@ -140,33 +148,28 @@ git clone https://github.com/Arian-DK/e-garden.git
 cd e-garden
 ```
 
-Upload the Arduino sketch located in `/arduino/e_garden_sensor_reader.ino` to your Nano ESP32.
-
 ## Data Flow
 
 ```plaintext
-[ Sensors ]
+[ Sensors ] → prepares sensors | data_retriver.ino
    ↓
-[ Arduino Nano ESP32 ] (Serial every 10 min)
+[ Computer ] → writes sensor data to text file | data_processor.py
    ↓
-[ Computer (Python Script) ] (Writes to text file)
+[ TinyScreen Interface ] → send interface to TinyScreen | tiny_watch_send_wire_data.ino
    ↓
-[ Text file ] (Bluetooth/Wi-Fi)
-   ↓
-[ TinyScreen ] (Display status)
+[ TinyScreen Display ] → send data to TinyScreen | send_to_watch_wire.py
 ```
 
 ## Getting Started
 
 1. **Connect Sensors** to the Arduino according to the wiring diagram.
-2. **Upload Arduino Code** using Arduino IDE.
-3. **Run Python Script** on your computer to start reading and logging sensor data.
-4. **Pair TinyWatch** via Bluetooth or Wi-Fi to begin receiving updates.
+2. **Run Code** following the order of the data flow.
+4. **Pair TinyWatch** and begin receiving updates.
 5. Watch your plants thrive with data-driven guidance.
 
 ## Support
 
-If you encounter issues or have suggestions, please [open an issue](https://github.com/Arian-DK/e-garden/issues) or email the team.
+If you encounter issues or have suggestions, please [open an issue](https://github.com/Arian-DK/e-garden/issues) or email me.
 
 ## Acknowledgements / References
 - https://www.cdc.gov/pcd/issues/2016/15_0402.htm (2016, CDC).
