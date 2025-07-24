@@ -1,7 +1,4 @@
 # Encouraging Gardening and Healthy Eating with E-Garden
-
-
-
 **A Smart Gardening Assistant to Reduce Food Insecurity**
 E-Garden is a smart gardening solution designed to empower individuals and communities with limited access to fresh produce. By combining real-time environmental sensing, intuitive feedback, and accessible technology, E-Garden simplifies plant care and promotes healthier eating through DIY gardening.
 
@@ -14,15 +11,17 @@ E-Garden is a smart gardening solution designed to empower individuals and commu
 - [The Goals of E-Garden](#The-Goals-of-E-Garden)
 - [Prototype](#Prototype)
 - [Conclusion](#Conclusion)
+- [Looking Forward](#Looking-Forward)
+- [Poster](#Poster)
 
 ### Product setup
 <img src=".\img\paths-up.png" alt="paths-up" width="200" align="right"/>
 
-- [Hardware Installation](#hardware-installation)
-- [Software Installation](#software-installation)
+- [Hardware Setup](#Hardware-Setup)
+- [Software Installation](#Software-Installation)
 - [Data Flow](#data-flow)
-- [Getting Started](#getting-started)
-- [Support](#support)
+- [Getting Started](#Getting-Started)
+- [Support](#Support)
 - [Acknowledgements/References](#Acknowledgements/References)
 - [License](#license)
 
