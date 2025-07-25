@@ -89,16 +89,16 @@ E-Garden uses a set of sensors connected to an Arduino that continuously monitor
 - **Plug-and-Play**: No batteries required, just connect and grow.
 
 ## Watch Interface
-<p align="center">
-  <img src="./img/tinyscreen_user_data.png" alt="tinyscreen_user_data" width="200"/>
-  <img src="./img/tinyscreen_raw_data.png" alt="tinyscreen_raw_data" width="200"/>
-</p>
-
-<p align="center">
-  <sub style="margin-right: 40px;">User Data Display</sub>
-  <sub>Raw Sensor Output</sub>
-</p>
-
+<div align="center">
+  <div style="display: inline-block; text-align: center; margin: 0 10px;">
+    <img src="./img/tinyscreen_user_data.png" alt="tinyscreen_user_data" width="200"/><br/>
+    <sub>User Data Display</sub>
+  </div>
+  <div style="display: inline-block; text-align: center; margin: 0 10px;">
+    <img src="./img/tinyscreen_raw_data.png" alt="tinyscreen_raw_data" width="200"/><br/>
+    <sub>Raw Sensor Output</sub>
+  </div>
+</div>
 
 
 ## Conclusion
