@@ -89,20 +89,17 @@ E-Garden uses a set of sensors connected to an Arduino that continuously monitor
 - **Plug-and-Play**: No batteries required, just connect and grow.
 
 ## Watch Interface
-<p align="center">
-<table>
-  <tr>
-    <td align="center">
-      <img src="./img/tinyscreen_user_data.png" alt="tinyscreen_user_data" width="200"/><br/>
-      <sub>Screen 1</sub>
-    </td>
-    <td align="center">
-      <img src="./img/tinyscreen_raw_data.png" alt="tinyscreen_raw_data" width="200"/><br/>
-      <sub>Screen 2</sub>
-    </td>
-  </tr>
-</table>
-</p>
+<div align="center">
+  <div style="display: inline-block; text-align: center; margin: 10px;">
+    <img src="./img/tinyscreen_user_data.png" alt="tinyscreen_user_data" width="200"/><br/>
+    <sub>Screen 1: User Data Display</sub>
+  </div>
+  <div style="display: inline-block; text-align: center; margin: 10px;">
+    <img src="./img/tinyscreen_raw_data.png" alt="tinyscreen_raw_data" width="200"/><br/>
+    <sub>Screen 2: Raw Sensor Output</sub>
+  </div>
+</div>
+
 
 ## Conclusion
 - **Addresses Food Deserts**: Helps individuals in underserved areas grow fresh food at home.
