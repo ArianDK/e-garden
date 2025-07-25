@@ -1,6 +1,6 @@
 # Encouraging Gardening and Healthy Eating with E-Garden
 **A Smart Gardening Assistant to Reduce Food Insecurity**
-E-Garden is a smart gardening solution designed to empower individuals and communities with limited access to fresh produce. By combining real-time environmental sensing, intuitive feedback, and accessible technology, E-Garden simplifies plant care and promotes healthier eating through DIY gardening.
+designed to empower individuals and communities with limited access to fresh produce. By combining real-time environmental sensing, intuitive feedback, and accessible technology, E-Garden simplifies plant care and promotes healthier eating through DIY gardening.
 
 
 ## Table of Contents
@@ -27,13 +27,13 @@ E-Garden is a smart gardening solution designed to empower individuals and commu
 
 ## The Food Access Gap
 
-An estimated **53.6 million** people in the U.S. reside in low-income areas that are more than 0.5 miles in urban areas and 10 miles in rural areas from the nearest supermarket (USDA).
+An estimated **53.6 million** people in the U.S. reside in low-income areas that are more than 0.5 miles in urban areas and 10 miles in rural areas from the nearest supermarket ([USDA](https://www.ers.usda.gov/data-products/food-access-research-atlas/documentation)).
 
 ### Food insecurity
 - Food Insecurity is defined as lacking the resources or ability to buy healthy nutritious food.
 - Low income is directly correlated with a decrease in vegetable consumption.
 
-A higher percentage of food-insecure respondents reported being too busy, finding fruits and vegetables too expensive, or disliking the taste of healthy food (CDC).
+A higher percentage of food-insecure respondents reported being too busy, finding fruits and vegetables too expensive, or disliking the taste of healthy food ([CDC](https://www.cdc.gov/pcd/issues/2016/15_0402.htm)).
 
 ## The Goals of E-Garden
 
@@ -89,9 +89,20 @@ E-Garden uses a set of sensors connected to an Arduino that continuously monitor
 - **Plug-and-Play**: No batteries required, just connect and grow.
 
 ## Watch Interface
-<div align="left">
-    <img src="./img/watch.png" alt="watch" style="height: 200px;">
-</div>
+<p align="center">
+<table>
+  <tr>
+    <td align="center">
+      <img src="./img/tinyscreen_user_data.png" alt="tinyscreen_user_data" width="200"/><br/>
+      <sub>Screen 1</sub>
+    </td>
+    <td align="center">
+      <img src="./img/tinyscreen_raw_data.png" alt="tinyscreen_raw_data" width="200"/><br/>
+      <sub>Screen 2</sub>
+    </td>
+  </tr>
+</table>
+</p>
 
 ## Conclusion
 - **Addresses Food Deserts**: Helps individuals in underserved areas grow fresh food at home.
@@ -182,4 +193,4 @@ If you encounter issues or have suggestions, please [open an issue](https://gith
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE.txt) file for details.
