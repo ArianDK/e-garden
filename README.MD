@@ -3,6 +3,8 @@
 designed to empower individuals and communities with limited access to fresh produce. By combining real-time environmental sensing, intuitive feedback, and accessible technology, E-Garden simplifies plant care and promotes healthier eating through DIY gardening.
 
 
+This project was developed during a research internship at Rice University’s [R-STEM](https://research.rice.edu/rstem/programs/graduate-undergraduate-students) program, as part of the [PATHS-UP](https://research.rice.edu/irso/center/precise-advanced-technologies-and-health-systems-underserved-populations-paths) initiative.
+
 ## Table of Contents
 ### The story of E-Garden
 <img src=".\img\rice.png" alt="rice" width="200" align="right"/>
